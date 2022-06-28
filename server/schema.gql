@@ -1,8 +1,15 @@
 type Query {
-  search(product: String, guide: String): [Article]
+  search(product: String, guide: String): SearchResult
+}
+
+type SearchResult {
+  products: [String]
+  guides: [String]
+  results: [Article]
 }
 
 type Article {
-  name: String
+  id: ID
+  title: String
   summary: String
 }

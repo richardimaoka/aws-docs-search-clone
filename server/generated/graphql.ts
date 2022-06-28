@@ -21,18 +21,26 @@ export type Scalars = {
 
 export type Article = {
   __typename?: "Article";
-  name: Maybe<Scalars["String"]>;
+  id: Maybe<Scalars["ID"]>;
   summary: Maybe<Scalars["String"]>;
+  title: Maybe<Scalars["String"]>;
 };
 
 export type Query = {
   __typename?: "Query";
-  search: Maybe<Array<Maybe<Article>>>;
+  search: Maybe<SearchResult>;
 };
 
 export type QuerySearchArgs = {
   guide: InputMaybe<Scalars["String"]>;
   product: InputMaybe<Scalars["String"]>;
+};
+
+export type SearchResult = {
+  __typename?: "SearchResult";
+  guides: Maybe<Array<Maybe<Scalars["String"]>>>;
+  products: Maybe<Array<Maybe<Scalars["String"]>>>;
+  results: Maybe<Array<Maybe<Article>>>;
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -144,7 +152,9 @@ export type DirectiveResolverFn<
 export type ResolversTypes = {
   Article: ResolverTypeWrapper<Article>;
   Boolean: ResolverTypeWrapper<Scalars["Boolean"]>;
+  ID: ResolverTypeWrapper<Scalars["ID"]>;
   Query: ResolverTypeWrapper<{}>;
+  SearchResult: ResolverTypeWrapper<SearchResult>;
   String: ResolverTypeWrapper<Scalars["String"]>;
 };
 
@@ -152,7 +162,9 @@ export type ResolversTypes = {
 export type ResolversParentTypes = {
   Article: Article;
   Boolean: Scalars["Boolean"];
+  ID: Scalars["ID"];
   Query: {};
+  SearchResult: SearchResult;
   String: Scalars["String"];
 };
 
@@ -160,8 +172,9 @@ export type ArticleResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes["Article"] = ResolversParentTypes["Article"]
 > = {
-  name: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  id: Resolver<Maybe<ResolversTypes["ID"]>, ParentType, ContextType>;
   summary: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  title: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -170,14 +183,37 @@ export type QueryResolvers<
   ParentType extends ResolversParentTypes["Query"] = ResolversParentTypes["Query"]
 > = {
   search: Resolver<
-    Maybe<Array<Maybe<ResolversTypes["Article"]>>>,
+    Maybe<ResolversTypes["SearchResult"]>,
     ParentType,
     ContextType,
     Partial<QuerySearchArgs>
   >;
 };
 
+export type SearchResultResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes["SearchResult"] = ResolversParentTypes["SearchResult"]
+> = {
+  guides: Resolver<
+    Maybe<Array<Maybe<ResolversTypes["String"]>>>,
+    ParentType,
+    ContextType
+  >;
+  products: Resolver<
+    Maybe<Array<Maybe<ResolversTypes["String"]>>>,
+    ParentType,
+    ContextType
+  >;
+  results: Resolver<
+    Maybe<Array<Maybe<ResolversTypes["Article"]>>>,
+    ParentType,
+    ContextType
+  >;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type Resolvers<ContextType = any> = {
   Article: ArticleResolvers<ContextType>;
   Query: QueryResolvers<ContextType>;
+  SearchResult: SearchResultResolvers<ContextType>;
 };

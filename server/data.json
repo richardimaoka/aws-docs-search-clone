@@ -1,22 +1,102 @@
 {
-  "categories": [
-    "AWS CLI",
-    "AWS Cloud Development Kit (AWS CDK)",
-    "AWS SDK Version 1 for .NET",
-    "AWS SDK Version 2 for .NET",
-    "AWS SDK Version 3 for .NET",
-    "AWS SDK for Java",
-    "AWS SDK for Javascript",
-    "AWS SDK for PHP",
-    "AWS SDK for Ruby",
-    "Amazon Elastic Compute Cloud",
-    "Amazon VPC",
-    "Other"
-  ],
-  "articles": [
-    {
-      "title": "AmazonElastic Compute Cloud (EC2) Documentation",
-      "summary": "Documentation for Amazon ec2, including User Guides, API References, Developer Guides, and other resources."
-    }
-  ]
+  "search": {
+    "products": [
+      "AWS CLI",
+      "AWS Cloud Development Kit (AWS CDK)",
+      "AWS SDK Version 1 for .NET",
+      "AWS SDK Version 2 for .NET",
+      "AWS SDK Version 3 for .NET",
+      "AWS SDK for Java",
+      "AWS SDK for Javascript",
+      "AWS SDK for PHP",
+      "AWS SDK for Ruby",
+      "Amazon Elastic Compute Cloud",
+      "Amazon VPC",
+      "Other"
+    ],
+    "guides": [
+      "API Reference",
+      "Other",
+      "User Guide",
+      "Developer Guide",
+      "AWS CLI Documentation",
+      "Catalog",
+      "AWS Whitepaper",
+      "User Guide for Windows Instances",
+      "User Guide for Linux Instances",
+      "Patterns"
+    ],
+    "results": [
+      {
+        "id": "11111111",
+        "title": "AmazonElastic Compute Cloud (EC2) Documentation",
+        "summary": "Documentation for Amazon ec2, including User Guides, API References, Developer Guides, and other resources."
+      },
+      {
+        "id": "22222222",
+        "title": "Amazon Elastic Compute Cloud (EC2) CLI",
+        "summary": "Provides AWS CLI commands, concepts, and notations for Amazon ec2."
+      },
+      {
+        "id": "33333333",
+        "title": "What is EC2 Image Builder? - EC2 Image Builder",
+        "summary": "ec2 Image Builder is a fully managed service for building secure operating system (OS) images for use on AWS. Image Builder allows you to quickly and easily automate your build,..."
+      },
+      {
+        "id": "4444444",
+        "title": "Helpful",
+        "summary": "Not helpful"
+      },
+      {
+        "id": "5555555",
+        "title": "Resilience in EC2 Image Builder - EC2 Image Builder",
+        "summary": "Learn how AWS architecture supports data redundancy, and learn about specific ec2 Image Builder features for data resiliency."
+      },
+      {
+        "id": "6666666",
+        "title": "Helpful",
+        "summary": "Not helpful"
+      },
+      {
+        "id": "7777777",
+        "title": "Data protection in EC2 Image Builder - EC2 Image Builder",
+        "summary": "Learn how the AWS shared responsibility model applies to data protection in ec2 Image Builder."
+      },
+      {
+        "id": "8888888",
+        "title": "Helpful",
+        "summary": "Not helpful"
+      },
+      {
+        "id": "9999999",
+        "title": "Using managed policies for EC2 Image Builder - EC2 Image Builder",
+        "summary": "Describes AWS managed policies for Image Builder and recent changes to those policies."
+      },
+      {
+        "id": "10101010",
+        "title": "Helpful",
+        "summary": "Not helpful"
+      },
+      {
+        "id": "11_11_11",
+        "title": "Monitor events and logs in EC2 Image Builder - EC2 Image Builder",
+        "summary": "Monitor events and logs in ec2 Image Builder."
+      },
+      {
+        "id": "12121212",
+        "title": "Helpful",
+        "summary": "Not helpful"
+      },
+      {
+        "id": "13131313",
+        "title": "Share EC2 Image Builder resources - EC2 Image Builder",
+        "summary": "Describes how ec2 Image Builder resources are shared through integration with AWS Resource Access Manager."
+      },
+      {
+        "id": "14141414",
+        "title": "Helpful",
+        "summary": "Not helpful"
+      }
+    ]
+  }
 }
