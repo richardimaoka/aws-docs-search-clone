@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --watch schema.gql,data.json --respawn index.ts",
+    "start": "ts-node-dev --watch schema.gql,data.json,generated/graphql.ts --respawn index.ts",
     "generate": "graphql-codegen --config codegen.yml --watch ./schema.gql"
   },
   "keywords": [],

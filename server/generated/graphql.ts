@@ -19,9 +19,20 @@ export type Scalars = {
   Float: number;
 };
 
+export type Article = {
+  __typename?: "Article";
+  name: Maybe<Scalars["String"]>;
+  summary: Maybe<Scalars["String"]>;
+};
+
 export type Query = {
   __typename?: "Query";
-  category: Maybe<Scalars["String"]>;
+  search: Maybe<Array<Maybe<Article>>>;
+};
+
+export type QuerySearchArgs = {
+  guide: InputMaybe<Scalars["String"]>;
+  product: InputMaybe<Scalars["String"]>;
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -131,6 +142,7 @@ export type DirectiveResolverFn<
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+  Article: ResolverTypeWrapper<Article>;
   Boolean: ResolverTypeWrapper<Scalars["Boolean"]>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars["String"]>;
@@ -138,18 +150,34 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+  Article: Article;
   Boolean: Scalars["Boolean"];
   Query: {};
   String: Scalars["String"];
+};
+
+export type ArticleResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes["Article"] = ResolversParentTypes["Article"]
+> = {
+  name: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  summary: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type QueryResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes["Query"] = ResolversParentTypes["Query"]
 > = {
-  category: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  search: Resolver<
+    Maybe<Array<Maybe<ResolversTypes["Article"]>>>,
+    ParentType,
+    ContextType,
+    Partial<QuerySearchArgs>
+  >;
 };
 
 export type Resolvers<ContextType = any> = {
+  Article: ArticleResolvers<ContextType>;
   Query: QueryResolvers<ContextType>;
 };

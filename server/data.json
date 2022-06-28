@@ -1,1 +1,22 @@
-{}
+{
+  "categories": [
+    "AWS CLI",
+    "AWS Cloud Development Kit (AWS CDK)",
+    "AWS SDK Version 1 for .NET",
+    "AWS SDK Version 2 for .NET",
+    "AWS SDK Version 3 for .NET",
+    "AWS SDK for Java",
+    "AWS SDK for Javascript",
+    "AWS SDK for PHP",
+    "AWS SDK for Ruby",
+    "Amazon Elastic Compute Cloud",
+    "Amazon VPC",
+    "Other"
+  ],
+  "articles": [
+    {
+      "title": "AmazonElastic Compute Cloud (EC2) Documentation",
+      "summary": "Documentation for Amazon ec2, including User Guides, API References, Developer Guides, and other resources."
+    }
+  ]
+}

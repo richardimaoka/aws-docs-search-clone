@@ -10,8 +10,8 @@ type ServerContext = Query;
 
 const resolvers: { Query: QueryResolvers<ServerContext> } = {
   Query: {
-    category(parent, args, context, info) {
-      return "";
+    search(parent, args, context, info) {
+      return [];
     },
   },
 };

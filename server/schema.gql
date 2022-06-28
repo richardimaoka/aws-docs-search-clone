@@ -1,3 +1,8 @@
 type Query {
-  category: String
+  search(product: String, guide: String): [Article]
+}
+
+type Article {
+  name: String
+  summary: String
 }
